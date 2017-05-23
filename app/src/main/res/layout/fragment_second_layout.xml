@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bgall"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_view_layout" />
+
+    <include
+        android:id="@+id/loadLayout"
+        layout="@layout/loading_layout" />
+
+    <newsandtools.dingqiqi.com.view.MarqueeView
+        android:id="@+id/tv_rd"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:text="实时热点-》作者:丁奇奇 QQ957789074"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#989898" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_rd"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <newsandtools.dingqiqi.com.view.LoopViewPager
+                android:id="@+id/loopviewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></newsandtools.dingqiqi.com.view.LoopViewPager>
+
+            <LinearLayout
+                android:id="@+id/ll_point_hint"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#989898" />
+    </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"></ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

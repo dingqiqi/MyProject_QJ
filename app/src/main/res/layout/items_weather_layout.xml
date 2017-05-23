@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_icon"
+            android:layout_toRightOf="@id/iv_icon"
+            android:text="星期六(2016-06-25)"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_time"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/iv_icon"
+            android:text="雨"
+            android:textColor="#989898"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="13dp"
+            android:layout_alignTop="@id/tv_weather"
+            android:layout_below="@id/tv_time"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/tv_weather"
+            android:background="#989898" />
+
+        <TextView
+            android:id="@+id/tv_fengxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_time"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/view"
+            android:text="南风"
+            android:textColor="#989898"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="31°/26°"
+            android:textColor="#989898"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="12dp"
+        android:background="#bcbcbc" />
+
+</LinearLayout>

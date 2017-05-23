@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <newsandtools.dingqiqi.com.view.DrawLayout
+        android:id="@+id/drawlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_down_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="有图模式"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="菜单"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="菜单"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="菜单"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="菜单"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <newsandtools.dingqiqi.com.view.CustomViewpager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/table_background"
+                android:orientation="horizontal">
+
+                <newsandtools.dingqiqi.com.view.TabButton
+                    android:id="@+id/tabbtn1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:tabicon="@mipmap/ic_main1"
+                    app:text="新闻"
+                    app:textSize="12sp"
+                    app:txtcolor="@color/green" />
+
+
+                <newsandtools.dingqiqi.com.view.TabButton
+                    android:id="@+id/tabbtn2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:tabicon="@mipmap/ic_main2"
+                    app:text="笑话"
+                    app:textSize="12sp"
+                    app:txtcolor="@color/green" />
+
+
+                <newsandtools.dingqiqi.com.view.TabButton
+                    android:id="@+id/tabbtn3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:tabicon="@mipmap/ic_main3"
+                    app:text="机器人"
+                    app:textSize="12sp"
+                    app:txtcolor="@color/green" />
+
+
+                <newsandtools.dingqiqi.com.view.TabButton
+                    android:id="@+id/tabbtn4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:tabicon="@mipmap/ic_main4"
+                    app:text="天气"
+                    app:textSize="12sp"
+                    app:txtcolor="@color/green" />
+            </LinearLayout>
+        </LinearLayout>
+    </newsandtools.dingqiqi.com.view.DrawLayout>
+</RelativeLayout>

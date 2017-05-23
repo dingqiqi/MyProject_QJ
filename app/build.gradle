@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "newsandtools.dingqiqi.com"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 3
+        versionName "1.0.2"
+    }
+
+    //签名
+    signingConfigs {
+        r {
+            storeFile file(CERT_NAME)
+            storePassword "aa11ac08252007"
+            keyAlias "dingqiqi"
+            keyPassword "aa11ac08252007"
+        }
+        d {
+            storeFile file(CERT_NAME)
+            storePassword "aa11ac08252007"
+            keyAlias "dingqiqi"
+            keyPassword "aa11ac08252007"
+        }
+    }
+
+    buildTypes {
+        release {
+            //对齐
+            zipAlignEnabled true
+            //打包
+            signingConfig signingConfigs.r
+            //混淆开关
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+        debug {
+            zipAlignEnabled false
+            //打包
+            signingConfig signingConfigs.d
+            minifyEnabled false
+            versionNameSuffix "-beta"
+        }
+        //修改生成的文件名
+//        applicationVariants.all { variant ->
+//            def time = new java.text.SimpleDateFormat("yyyyMMdd").format(new Date())
+//            variant.outputs.each { output ->
+//                def file = output.outputFile
+//                def fileName = PROJECT_NAME   + "_V" + defaultConfig.versionName + "_" + time + ".apk"
+//                output.outputFile = new File(file.parent, fileName)
+//            }
+//        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            resources.srcDirs = ['src/main/java', 'src/main/aidl']
+            aidl.srcDirs = ['src/main/aidl']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+build {
+    doLast {
+        //tasks.copyTaskWithPatterns.execute()
+    }
+}
+
+
+task copyTaskWithPatterns(type: Copy) {
+    def versionName = android.defaultConfig.versionName
+    from "${buildDir}/outputs/apk/"
+    into RELEASE_DIR + PRODUCT_NAME + "/" + versionName
+
+    // 不拷贝未签名的文件.
+    exclude { details ->
+        details.file.name.contains('-unaligned') ||
+                details.file.name.contains('-unsigned') ||
+                !details.file.name.contains(versionName)
+    }
+    include "**/*.apk"
+}
+
+task renameOut(type: Copy) {
+    def versionName = android.defaultConfig.versionName
+    from RELEASE_DIR+ versionName
+    into RELEASE_DIR+ versionName
+    rename { String fileName ->
+        if(fileName.contains(PROJECT_NAME)){
+            fileName.replace(PROJECT_NAME, PRODUCT_NAME)
+        }
+    }
+}
+task makePretty(type: Delete) {
+    def versionName = android.defaultConfig.versionName
+    FileTree tree = fileTree (dir:  RELEASE_DIR+ versionName);
+
+    tree.each { File file ->
+        if(!file.name.contains(PRODUCT_NAME)){
+            delete(file)
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile project(':autolayout')
+    compile 'com.android.support:recyclerview-v7:23.0.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+}

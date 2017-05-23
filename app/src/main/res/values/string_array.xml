@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--频道列表-->
+    <array name="channel_list">
+        <item>popular,热点</item>
+        <item>recomm,推荐</item>
+        <item>ent,娱乐</item>
+        <item>society,社会</item>
+        <item>finance,财经</item>
+        <item>sports,体育</item>
+        <item>mil,军事</item>
+        <item>health,健康</item>
+        <item>tech,科技</item>
+        <item>auto,汽车</item>
+        <item>travel,旅游</item>
+        <item>history,历史</item>
+        <item>fashion,时尚</item>
+        <item>couple,闺房</item>
+        <item>game,游戏</item>
+        <item>internet,网络</item>
+        <item>real,干货</item>
+        <item>world,国际</item>
+        <item>house,房产</item>
+        <item>edu,教育</item>
+        <item>baby,育儿</item>
+        <item>anecdote,奇闻</item>
+        <item>food,美食</item>
+        <item>antique,文玩</item>
+        <item>astro,星座</item>
+        <item>comic,动漫</item>
+        <item>shares,股票</item>
+        <item>nba,NBA</item>
+        <item>home,家居</item>
+        <item>abroad,留学</item>
+        <item>beauty,美容</item>
+        <item>digital,数码</item>
+    </array>
+
+</resources>

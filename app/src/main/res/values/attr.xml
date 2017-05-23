@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="test">
+        <attr name="tabicon" format="reference|integer" />
+        <attr name="txtcolor" format="reference|color" />
+        <attr name="text" format="reference|string" />
+        <attr name="textSize" format="reference|dimension" />
+    </declare-styleable>
+
+</resources>
